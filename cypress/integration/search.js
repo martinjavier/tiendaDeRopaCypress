@@ -6,10 +6,7 @@ describe('Search elements', () => {
 
     it('Search for elements with multiple results', () => {
 
-        cy.fixture('index').then((index) => {
-            cy.get(index.searchInput).type('phone');
-            cy.get(index.searchButton).click();
-        });
+        cy.search('phone');
 
         cy.fixture('searchResult').then((searchResult) => {
             cy.get(searchResult.result).should('contain', 'phone');
@@ -18,11 +15,8 @@ describe('Search elements', () => {
     })
 
     it('Search for elements with no results', () => {
-
-        cy.fixture('index').then((index) => {
-            cy.get(index.searchInput).type('qwerty');
-            cy.get(index.searchButton).click();
-        });
+        // Usando el comando Search
+        cy.search('querty');
 
         cy.fixture('searchResult').then((searchResult) => {
             cy.get(searchResult.message).should('contain', 'There is no product that matches the search criteria.');
