@@ -1,0 +1,8 @@
+{
+    "menu" : ".list-inline > .dropdown > .dropdown-toggle",
+    "option" : ".dropdown-menu > :nth-child(2) > a",
+    "email" : "#input-email",
+    "password" : "#input-password",
+    "button" : "form > .btn",
+    "alert" : ".alert"
+}
